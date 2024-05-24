@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import LoadingPage from "./Components/LoadingPage";
+import Main from "./Components/Main";
+import Modal from "./Components/Modal";
+import SideBar from "./Components/SideBar";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [mainContent , setMainContent] = useState("defult")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LoadingPage />
+      <div className="flex flex-row relative">
+        <SideBar content={setMainContent} />
+        {showModal ? (
+          <Modal showModal={setShowModal} />
+        ) : (
+          <Main showModal={setShowModal} content={mainContent}/>
+        )}
+      </div>
     </div>
   );
 }
