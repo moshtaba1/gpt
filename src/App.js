@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <LoadingPage />
-      <div className="flex flex-row relative">
+      <div className=" sm:relative">
         <SideBar content={setMainContent} />
         {showModal ? (
           <Modal showModal={setShowModal} />

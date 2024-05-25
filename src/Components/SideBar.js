@@ -13,9 +13,9 @@ export default function SideBar({ content }) {
   const [sidebarShow, setSidebarShow] = useState(true);
 
   return (
-    <div>
+    <div className="fixed">
       {sidebarShow ? (
-        <div className="relative md:w-80 sm:w-60 w-44 flex flex-col justify-between bg-[#202123] h-screen p-2 pt-10">
+        <div className="relative sm:w-60 w-44 flex flex-col justify-between bg-[#202123] h-screen p-2 pt-10">
           <div
             onClick={() => setSidebarShow(false)}
             className="absolute top-2 right-2 cursor-pointer"
@@ -73,7 +73,7 @@ export default function SideBar({ content }) {
           onClick={() => setSidebarShow(true)}
           className="absolute top-2 left-2 cursor-pointer "
         >
-          <IoIosMenu className="text-white w-10 h-10" />
+          <IoIosMenu className="text-white w-7 h-7 sm:w-10 sm:h-10" />
         </div>
       )}
     </div>
